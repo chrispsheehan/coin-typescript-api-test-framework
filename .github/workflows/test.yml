@@ -21,7 +21,7 @@ jobs:
           node-version: '12.x'
       - name: Install dependencies
         run: npm install typescript -g
-      - run: npm install tsc
-      - run: yarn
-      - run: npm install
-      - run: npm run test     
+      - run: npm install tsc --prefix /src
+      - run: yarn --prefix /src
+      - run: npm install --prefix /src
+      - run: npm run test  --prefix /src   
