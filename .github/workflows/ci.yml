@@ -11,7 +11,7 @@ on:
       - 'main'
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v2
@@ -21,8 +21,14 @@ jobs:
         uses: actions/setup-node@v2
       - name: Install dependencies
         run: npm run build --prefix ${GITHUB_WORKSPACE}/src
-      - name: Run Tests      
-        run: npm run test --prefix ${GITHUB_WORKSPACE}/src
+
+  test:
+    needs: build  
+    runs-on: ubuntu-latest 
+    steps:     
+      - name: Run Tests
+        uses: actions/setup-node@v2  
+        run: npm run test --prefix ${GITHUB_WORKSPACE}/src        
 
   push_to_registry:
     needs: test
