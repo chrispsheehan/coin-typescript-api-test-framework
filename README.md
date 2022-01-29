@@ -39,4 +39,4 @@ docker run -it local-test test
 
 ### To-Do
 
-- Proper versioning on docker images. At the moment all images are tagged with latest, ideally this would be an increment
+- Proper versioning on docker images. At the moment all images are tagged with latest, ideally this would be an incremented major/minor version.
