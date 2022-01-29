@@ -14,7 +14,8 @@ jobs:
   build:
     runs-on: ubuntu-latest 
     steps:
-      - uses: actions/checkout@v2
+      - name: Check out the repo
+        uses: actions/checkout@v2
         with:
           persist-credentials: false      
       - name: Use Node.js
@@ -25,9 +26,10 @@ jobs:
   test:
     needs: build  
     runs-on: ubuntu-latest 
-    steps:     
+    steps:
+      - name: Use Node.js
+        uses: actions/setup-node@v2      
       - name: Run Tests
-        uses: actions/setup-node@v2  
         run: npm run test --prefix ${GITHUB_WORKSPACE}/src        
 
   push_to_registry:
