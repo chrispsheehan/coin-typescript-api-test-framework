@@ -4,3 +4,6 @@ node_modules/
 #TSC generated files
 **/*.js
 **/*.js.map
+
+# To mitigate no TSC error
+package-lock.json

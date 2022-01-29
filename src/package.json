@@ -4,7 +4,7 @@
   "description": "Blog post sample",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npm install",
     "test": "tsc && cucumber-js features/"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
     "@types/cucumber": "^4.0.1",
     "chai": "^4.1.2",
     "cucumber": "^4.2.1",
+    "ts": "^0.2.2",
     "typescript": "^2.8.1"
   }
 }
