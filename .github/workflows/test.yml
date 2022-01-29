@@ -10,6 +10,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./src
 
     steps:
       - uses: actions/checkout@v2
@@ -22,4 +24,4 @@ jobs:
       - run: npm install tsc
       - run: yarn
       - run: npm install
-      - run: npm run test      
+      - run: npm run test     
