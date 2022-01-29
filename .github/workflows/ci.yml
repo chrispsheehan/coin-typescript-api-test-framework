@@ -12,6 +12,7 @@ on:
 
 jobs:
   build:
+    name: Build  
     runs-on: ubuntu-latest 
     steps:
       - name: Check out the repo
@@ -24,11 +25,18 @@ jobs:
         run: npm run build --prefix ${GITHUB_WORKSPACE}/src
 
   test:
-    needs: build  
+    needs: build
+    name: Run Tests    
     runs-on: ubuntu-latest 
     steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false      
       - name: Use Node.js
-        uses: actions/setup-node@v2      
+        uses: actions/setup-node@v2
+      - name: Install dependencies
+        run: npm run build --prefix ${GITHUB_WORKSPACE}/src   
       - name: Run Tests
         run: npm run test --prefix ${GITHUB_WORKSPACE}/src        
 
