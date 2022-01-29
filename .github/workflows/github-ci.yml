@@ -42,7 +42,7 @@ jobs:
 
   push_to_registry:
     needs: test
-    name: Push Docker image to Docker Hub
+    name: Publish
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
