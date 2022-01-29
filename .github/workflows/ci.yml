@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v2
       - name: Install dependencies
         run: cd src
-      - run: npm ci
       - run: npm run build --if-present
       - name: Run Tests      
         run: npm run test
