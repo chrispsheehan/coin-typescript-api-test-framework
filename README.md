@@ -8,13 +8,20 @@ This framewoerk targets the https://rapidapi.com/Coinranking/api/coinranking1/ A
 
 Job are run via [GitHub Actions](https://github.com/features/actions). All below jobs are dependant on each other.
 
-- ```Build```: Ensures no build time errors.
-- ```Test```: Ensures no failures during tests.
-- ```Publish```: Builds image and pushes to [Dockerhub](https://hub.docker.com/).
+- ```Build```: Ensures no build time errors
+- ```Test```: Ensures no failures during tests
+- ```Publish```: Builds image and pushes to [Dockerhub](https://hub.docker.com/)
+
+Required [GitHub repositry secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
+
+- ```API_CONFIG```: Json string as per ```src/config/env.json``` containing API URL and auth token
+- ```DOCKER_PASSWORD```: Username used to log into [Dockerhub](https://hub.docker.com/)
+- ```DOCKER_USERNAME```: Password used to log into [Dockerhub](https://hub.docker.com/)
 
 ## Run it locally
 
 - Install [node](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/)
+- Populate ```src/config/env.json``` with valid values
 
 ```bash
 cd src
