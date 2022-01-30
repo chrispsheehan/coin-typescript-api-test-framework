@@ -40,7 +40,7 @@ jobs:
         id: create-json
         uses: jsdaniell/create-json@1.1.2
         with:
-          name: ${GITHUB_WORKSPACE}/src/config/env.json
+          name: /src/config/env.json
           json: ${{ secrets.API_CONFIG }}      
       - name: Install dependencies
         run: npm run build --prefix ${GITHUB_WORKSPACE}/src   
