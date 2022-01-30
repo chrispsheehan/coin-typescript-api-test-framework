@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-node@v2
       - name: Install dependencies
         run: npm run build --prefix ${GITHUB_WORKSPACE}/src
+      - run: npm run check --prefix ${GITHUB_WORKSPACE}/src
 
   test:
     needs: build
