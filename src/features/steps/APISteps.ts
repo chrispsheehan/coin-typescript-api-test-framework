@@ -1,5 +1,4 @@
-import { expect } from "chai";
-import { Given, When, Then } from "cucumber";
+import { Given, Then, When } from '@cucumber/cucumber';
 import { CoinRankingApi } from "../../api/coin-ranking-api";
 import env from "../../config/env.json"
 
@@ -10,7 +9,7 @@ Given("The coin ranking API is available", async function() {
     console.log('tis there'); 
 });
 
-Given('I obtain the {string} exchange', function (exchange) {
+Given('I obtain the {string} exchange', function (exchange: string) {
     console.log(`${exchange} exchange is obtained`);
 });
 

@@ -1,4 +1,4 @@
-import { Before, BeforeAll, AfterAll } from "cucumber";
+import { Before, BeforeAll, AfterAll } from '@cucumber/cucumber';
 
 Before(function () {
 
