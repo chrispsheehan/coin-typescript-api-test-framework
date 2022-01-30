@@ -1,11 +1,16 @@
-import { BeforeAll, AfterAll } from "cucumber";
+import { CoinRanking } from "../world/coin-ranking"
+import { Before, BeforeAll, AfterAll } from "cucumber";
+
+Before(function (this: CoinRanking) {
+
+});
 
 BeforeAll(function () {
-  // eslint-disable-next-line no-console
-  console.log('Before All');
+
+    console.log('Before All');
 });
 
 AfterAll(function () {
-  // eslint-disable-next-line no-console
-  console.log('After All');
+
+    console.log('After All');
 });
