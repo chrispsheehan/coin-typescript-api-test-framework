@@ -1,10 +1,7 @@
-import { setWorldConstructor, World } from "cucumber";
+import { CoinRanking } from "../../api/coin-ranking-api";
 
-export class CoinRanking implements World {
-
-    constructor() {
-
+declare module "cucumber" {
+    interface World {
+        api: CoinRanking;
     }
 }
-
-setWorldConstructor(CoinRanking);
