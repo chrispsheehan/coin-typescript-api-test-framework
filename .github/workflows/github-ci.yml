@@ -36,6 +36,9 @@ jobs:
           persist-credentials: false      
       - name: Use Node.js
         uses: actions/setup-node@v2
+      - name: Set Config
+        run: rm ${GITHUB_WORKSPACE}/src/config/env.json
+      - run: ${{ secrets.API_CONFIG }} > ${GITHUB_WORKSPACE}/src/config/env.json
       - name: Install dependencies
         run: npm run build --prefix ${GITHUB_WORKSPACE}/src   
       - name: Run Tests
