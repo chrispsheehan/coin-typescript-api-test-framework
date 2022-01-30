@@ -1,7 +1,12 @@
+import { expect } from "chai";
 import { Given, When, Then } from "cucumber";
+import { CoinRankingApi } from "../../api/coin-ranking-api";
+import env from "../../config/env.json"
 
-Given("The coin ranking API is available", function() {
-    console.log("Coin ranking API is available");
+Given("The coin ranking API is available", async function() {
+    
+    this.api = new CoinRankingApi(env.BASE_URL, env.AUTH_TOKEN);
+    await this.api.build('/coins') 
 });
 
 Given('I obtain the {string} exchange', function (exchange) {

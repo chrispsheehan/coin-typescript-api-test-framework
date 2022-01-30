@@ -1,17 +1,30 @@
-import env from "../../config/env.json";
-
-export class CoinRanking {
+import request from "supertest";
+export class CoinRankingApi {
     
     baseUrl: string;
     authToken: string;
 
-    constructor() {
+    constructor(baseUrl: string, authToken: string) {
 
-        this.baseUrl = env.BASE_URL;
-        this.authToken = env.AUTH_TOKEN;        
+        this.baseUrl = baseUrl;
+        this.authToken = authToken;        
     }
 
-    get() {
-        
+    build(url: string) {
+        return request(this.baseUrl)
+        .get(url)
+        .set('Accept', 'application/json')
+        .set('x-rapidapi-host', 'coinranking1.p.rapidapi.com')
+        .set('x-rapidapi-key', this.authToken)
+        .send({
+            "referenceCurrencyUuid": "yhjMzLPhuIDl",
+            "timePeriod": "24h",
+            "tiers": "1",
+            "orderBy": "marketCap",
+            "orderDirection": "desc",
+            "limit": "50",
+            "offset": "0"
+        })
+        .expect(200)
     }
 }

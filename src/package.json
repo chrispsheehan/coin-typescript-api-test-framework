@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm install && tsc",
     "check": "cucumber-js features/ --dry-run",
-    "test": "cucumber-js features/"
+    "test": "tsc && cucumber-js features/"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +14,10 @@
   "devDependencies": {
     "@types/chai": "^4.1.2",
     "@types/cucumber": "^4.0.1",
+    "@types/supertest": "^2.0.11",
     "chai": "^4.1.2",
     "cucumber": "^4.2.1",
+    "supertest": "^6.2.2",
     "ts": "^0.2.2",
     "typescript": "^2.8.1"
   }
