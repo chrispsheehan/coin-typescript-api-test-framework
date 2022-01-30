@@ -16,6 +16,8 @@ export class CoinRankingApi {
         .set('Accept', 'application/json')
         .set('x-rapidapi-host', 'coinranking1.p.rapidapi.com')
         .set('x-rapidapi-key', this.authToken)
+        .set('Connection', 'upgrade')
+        .set('Upgrade', 'HTTP/2.0, SHTTP/1.3, IRC/6.9, RTA/x11')        
         .send({
             "referenceCurrencyUuid": "yhjMzLPhuIDl",
             "timePeriod": "24h",
