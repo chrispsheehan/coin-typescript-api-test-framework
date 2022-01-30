@@ -4,9 +4,9 @@
   "description": "Blog post sample",
   "main": "index.js",
   "scripts": {
-    "build": "npm install && tsc",
+    "build": "npm install",
     "check": "cucumber-js features/ --dry-run",
-    "test": "tsc && cucumber-js features/"
+    "test": "cucumber-js features/"
   },
   "keywords": [],
   "author": "",
