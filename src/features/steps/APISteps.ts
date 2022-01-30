@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import { Given, When, Then } from "cucumber";
 
 Given("The coin ranking API is available", function() {
