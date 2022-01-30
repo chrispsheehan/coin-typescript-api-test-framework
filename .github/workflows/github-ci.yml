@@ -36,8 +36,6 @@ jobs:
           persist-credentials: false      
       - name: Use Node.js
         uses: actions/setup-node@v2
-      - name: Remove Config
-        run: rm ${GITHUB_WORKSPACE}/src/config/env.json
       - name: Create config
         id: create-json
         uses: jsdaniell/create-json@1.1.2
