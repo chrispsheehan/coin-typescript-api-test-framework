@@ -44,9 +44,6 @@ jobs:
           json: ${{ secrets.API_CONFIG }}      
       - name: Install dependencies
         run: npm install --prefix ${GITHUB_WORKSPACE}/src
-      - run: cd src
-      - run: tsc
-      - run: cd ..
       - name: Run Tests
         run: npm run test --prefix ${GITHUB_WORKSPACE}/src        
 
