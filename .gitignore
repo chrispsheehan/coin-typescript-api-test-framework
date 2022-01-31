@@ -4,4 +4,3 @@ node_modules/
 #TSC generated files
 **/*.js
 **/*.js.map
-src/config/env.json
