@@ -22,7 +22,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
       - name: Create config file
-        run: touch /src/config/env.json        
+        run: touch ./src/config/env.json        
       - name: Install dependencies
         run: npm run build --prefix ${GITHUB_WORKSPACE}/src
       - run: npm run check --prefix ${GITHUB_WORKSPACE}/src
@@ -39,7 +39,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
       - name: Create config file
-        run: touch /src/config/env.json
+        run: touch ./src/config/env.json
       - name: Generate config
         id: create-json
         uses: jsdaniell/create-json@1.1.2
