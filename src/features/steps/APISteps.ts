@@ -5,7 +5,7 @@ import env from "../../config/env.json"
 Given("The coin ranking API is available", async function() {
     
     this.api = new CoinRankingApi(env.BASE_URL, env.AUTH_TOKEN);
-    await this.api.build('/coins');
+    await this.api.get('/coins');
     console.log('tis there'); 
 });
 

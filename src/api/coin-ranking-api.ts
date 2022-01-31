@@ -1,20 +1,23 @@
 import request from "supertest";
+import { removeProtocolFromUrl } from "../helpers/formater";
 export class CoinRankingApi {
     
-    baseUrl: string;
-    authToken: string;
+    private baseUrl: string;
+    private authToken: string;
+    private host: string;
 
     constructor(baseUrl: string, authToken: string) {
 
         this.baseUrl = baseUrl;
+        this.host = removeProtocolFromUrl(baseUrl);
         this.authToken = authToken;        
     }
 
-    build(url: string) {
+    get(url: string): request.Test {
         return request(this.baseUrl)
         .get(url)
         .set('Accept', 'application/json')
-        .set('x-rapidapi-host', 'coinranking1.p.rapidapi.com')
+        .set('x-rapidapi-host', this.host)
         .set('x-rapidapi-key', this.authToken)      
         .send({
             "referenceCurrencyUuid": "yhjMzLPhuIDl",
