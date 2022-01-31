@@ -36,7 +36,9 @@ jobs:
           persist-credentials: false      
       - name: Use Node.js
         uses: actions/setup-node@v2
-      - name: Create config
+      - name: Create config file
+        run: touch ${GITHUB_WORKSPACE}/src/config/env.json
+      - name: Generate config
         id: create-json
         uses: jsdaniell/create-json@1.1.2
         with:
