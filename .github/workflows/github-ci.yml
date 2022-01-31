@@ -22,11 +22,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
       - name: Generate config
-        id: create-json
-        uses: jsdaniell/create-json@1.1.2
-        with:
-          name: /src/config/env.json
-          json: ${{ secrets.API_CONFIG }}        
+        run: ls
       - name: Install dependencies
         run: npm run build --prefix ${GITHUB_WORKSPACE}/src
       - run: npm run check --prefix ${GITHUB_WORKSPACE}/src
