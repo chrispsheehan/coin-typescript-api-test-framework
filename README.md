@@ -1,7 +1,7 @@
 # TypeScriptAPITestFramework
 
 - [Blog post inspiration](https://sylvain.pontoreau.com/2018/04/30/typescript-cucumber-getting-started)
-- [CucumberJS](https://cucumber.io/docs/guides/)
+- [CucumberJS](https://github.com/cucumber/cucumber-js)
 
 This framewoerk targets the [Coin Ranking API](https://rapidapi.com/Coinranking/api/coinranking1).
 
