@@ -29,4 +29,3 @@ export class CoinRankingApi {
         return this.get(`indexes/${indexName}`)
     }
 }
-

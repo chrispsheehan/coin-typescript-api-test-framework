@@ -35,4 +35,4 @@ Then('I print the two results in order oldest to newest', function () {
 Given('I obtain the {string} coin rank', function (string) {
 
     return 'pending';
-  });
+});
