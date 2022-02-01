@@ -8,9 +8,10 @@ Given("The coins API is available", async function() {
 });
 
 
-Given('I obtain the {string} coin history', function (string) {
+Given('I obtain the {string} coin history', async function (string) {
 
-    return 'pending';
+    var aaaa : CoinDetail = await this.coinsApi.getCoinsDetails();
+    console.log(aaaa.data.coins[0].name)
 });
 
 
@@ -30,3 +31,8 @@ Then('I print the two results in order oldest to newest', function () {
 
     return 'pending';
 });
+
+Given('I obtain the {string} coin rank', function (string) {
+
+    return 'pending';
+  });

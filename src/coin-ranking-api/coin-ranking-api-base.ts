@@ -1,5 +1,6 @@
 import request from "supertest";
 import { removeProtocolFromUrl } from "../helpers/formater";
+
 export class CoinRankingApi {
     
     private baseUrl: string;
@@ -16,12 +17,16 @@ export class CoinRankingApi {
         this.authToken = authToken;        
     }
 
-    getIndex(indexName: string): request.Test {
+    get(targetResouce: string): request.Test {
         return request(this.baseUrl)
-            .get(`/indexes/${indexName}`)
-            .set(this.hostHeader, this.host)
-            .set(this.keyHeader, this.authToken)
-            .expect(200)
+                .get(`/${targetResouce}/`)
+                .set(this.hostHeader, this.host)
+                .set(this.keyHeader, this.authToken)
+                .expect(200)
+        }     
+
+    getIndex(indexName: string): request.Test {
+        return this.get(`indexes/${indexName}`)
     }
 }
 
