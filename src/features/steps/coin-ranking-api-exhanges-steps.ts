@@ -1,6 +1,6 @@
 import { Given, Then, When } from '@cucumber/cucumber';
 
-Given("The coin ranking API is available", function() {
+Given("The exchanges API is available", function() {
     
     
 });

@@ -1,15 +1,15 @@
 import { CoinRankingApi } from "./coin-ranking-api-base";
 
-export class CoinRankingApiCoins extends CoinRankingApi {
+export class CoinRankingApiExchanges extends CoinRankingApi {
 
     constructor(baseUrl: string, authToken: string) {
 
         super(baseUrl, authToken);     
     }
 
-    getCoins(): Promise<CoinIndex> {
+    getExchanges(): Promise<unknown> {
         return new Promise((resolve, reject) => {
-                this.getIndex('coins')
+                this.getIndex('exchanges')
                 .then(response => {
                 return resolve(JSON.parse(response.text));
             })
@@ -17,6 +17,6 @@ export class CoinRankingApiCoins extends CoinRankingApi {
                 return reject(err);
             });  
         })    
-    }
+    }   
 }
 

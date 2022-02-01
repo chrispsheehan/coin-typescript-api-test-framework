@@ -3,4 +3,4 @@ Feature: Get coin history
     From the data you retrieve, output to theconsole.
 
 Background:
-    Given The coin ranking API is available
+    Given The coins API is available
