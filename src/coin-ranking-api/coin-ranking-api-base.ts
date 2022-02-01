@@ -23,29 +23,5 @@ export class CoinRankingApi {
             .set(this.keyHeader, this.authToken)
             .expect(200)
     }
-
-    getCoins(): Promise<CoinIndex> {
-        return new Promise((resolve, reject) => {
-                this.getIndex('coins')
-                .then(response => {
-                return resolve(JSON.parse(response.text));
-            })
-            .catch(err => {
-                return reject(err);
-            });  
-        })    
-    }
-
-    getExchanges(): Promise<unknown> {
-        return new Promise((resolve, reject) => {
-                this.getIndex('exchanges')
-                .then(response => {
-                return resolve(response.text);
-            })
-            .catch(err => {
-                return reject(err);
-            });  
-        })    
-    }   
 }
 
