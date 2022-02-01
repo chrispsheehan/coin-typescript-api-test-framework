@@ -12,8 +12,9 @@ Given('I obtain the {string} coin history', async function (coinName: string) {
 
     var coinDetail: CoinDetail = await this.coinsApi.getCoinsDetails();
     var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(coinDetail, coinName);
-
-    console.log(coinName + coinBreakdown.uuid);
+    var coinHistory: CoinHistory = await this.coinsApi.getCoinHistory(coinBreakdown.uuid);
+    
+    console.log(coinName + coinHistory.data.change);
 });
 
 

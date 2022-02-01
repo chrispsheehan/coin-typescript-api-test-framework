@@ -17,13 +17,25 @@ export class CoinRankingApi {
         this.authToken = authToken;        
     }
 
-    get(targetResouce: string): request.Test {
+    getBase(targetResouce: string): request.Test {
         return request(this.baseUrl)
-                .get(`/${targetResouce}/`)
-                .set(this.hostHeader, this.host)
-                .set(this.keyHeader, this.authToken)
-                .expect(200)
-        }     
+            .get(`/${targetResouce}/`)
+            .set(this.hostHeader, this.host)
+            .set(this.keyHeader, this.authToken)
+    }     
+
+
+    get(targetResouce: string): request.Test {
+        return this.getBase(targetResouce)
+            .expect(200)
+    }
+    
+    getQuery(targetResouce: string, queryParams: JSON): request.Test {
+        return this.getBase(targetResouce)
+            .query(queryParams)
+            .expect(200)
+    }    
+
 
     getIndex(indexName: string): request.Test {
         return this.get(`indexes/${indexName}`)
