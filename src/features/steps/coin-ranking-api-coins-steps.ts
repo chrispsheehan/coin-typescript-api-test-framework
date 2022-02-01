@@ -8,10 +8,12 @@ Given("The coins API is available", async function() {
 });
 
 
-Given('I obtain the {string} coin history', async function (string) {
+Given('I obtain the {string} coin history', async function (coinName: string) {
 
-    var aaaa : CoinDetail = await this.coinsApi.getCoinsDetails();
-    console.log(aaaa.data.coins[0].name)
+    var coinDetail: CoinDetail = await this.coinsApi.getCoinsDetails();
+    var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(coinDetail, coinName);
+
+    console.log(coinName + coinBreakdown.uuid);
 });
 
 
