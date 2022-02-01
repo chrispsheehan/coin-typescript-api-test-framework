@@ -11,12 +11,12 @@ export class CoinRankingApiCoins extends CoinRankingApi {
 
     getCoins(): Promise<string> {
         return new Promise((resolve, reject) => {
-                this.getIndex('coins')
-                .then(response => {
-                    var index: Index = JSON.parse(response.text)
-                    this.coins = index.items;
-                    return resolve(index.status);
-                })
+            this.getIndex('coins')
+            .then(response => {
+                var index: Index = JSON.parse(response.text)
+                this.coins = index.items;
+                return resolve(index.status);
+            })
             .catch(err => {
                 return reject(err);
             });  
