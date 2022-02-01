@@ -1,14 +1,14 @@
 import { Given, Then, When } from '@cucumber/cucumber';
+import { expect } from 'chai';
 
-Given("The exchanges API is available", function() {
+Given("The exchanges API is available", async function() {
     
-    
+    // var status: string = await this.exchangesApi.getExchanges()
+    // expect(status).to.equal('success');
 });
 
 Given('I obtain the {string} exchange', async function (exchange: string) {
-    console.log(`${exchange} exchange is obtained`);
-    var aa: CoinIndex  = await this.coinsApi.getCoins();
-    console.log('asasasas' + aa.status)
+
 });
 
 When('I sort in a presentable format to the console', function() {
