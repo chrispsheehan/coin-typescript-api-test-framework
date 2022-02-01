@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm install && tsc",
     "check": "cucumber-js features/ --dry-run",
-    "test": "tsc && cucumber-js features/"
+    "test": "tsc && cucumber-js features/ --tags=\"$tags\""
   },
   "keywords": [],
   "author": "",

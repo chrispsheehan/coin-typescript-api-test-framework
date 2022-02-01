@@ -1,3 +1,4 @@
+@exchanges
 Feature: Get exchanges
     Get the three following exchanges: BitTrue,Binance,Whitebit.
     For each exchange, output in a presentable format to the console the name of the exchange, number of markets, volume and rank. 

@@ -45,7 +45,7 @@ jobs:
       - name: Install dependencies
         run: npm install --prefix ${GITHUB_WORKSPACE}/src
       - name: Run Tests
-        run: npm run test --prefix ${GITHUB_WORKSPACE}/src        
+        run: tags="@coins" npm run test --prefix ${GITHUB_WORKSPACE}/src        
 
   push_to_registry:
     needs: test

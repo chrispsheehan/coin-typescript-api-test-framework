@@ -20,22 +20,22 @@ Given('I obtain the {string} coin history', async function (coinName: string) {
 
 Given('I obtain the first result from {int} days ago', function (int) {
 
-    return 'pending';
+
 });
 
 
 Given('I obtain the latest result', function () {
 
-    return 'pending';
+
 });
 
 
 Then('I print the two results in order oldest to newest', function () {
 
-    return 'pending';
+
 });
 
 Given('I obtain the {string} coin rank', function (string) {
 
-    return 'pending';
+
 });

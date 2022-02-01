@@ -9,4 +9,4 @@ RUN npm install typescript -g \
 && yarn \
 && npm install
 
-ENTRYPOINT [ "npm", "run" ]
+ENTRYPOINT ["node", "./node_modules/.bin/cucumber-js", "features/"]

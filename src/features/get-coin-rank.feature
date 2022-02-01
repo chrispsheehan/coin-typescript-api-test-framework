@@ -1,3 +1,4 @@
+@coins
 Feature: Get coin rank
     For each result, print the name, type, rank and first seen price to the console. 
     Results should be sorted in descendingorder based upon the time that each coin was first seen. 

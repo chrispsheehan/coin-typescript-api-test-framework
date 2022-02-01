@@ -1,3 +1,4 @@
+@coins
 Feature: Get coin history
     For each coin, fetch the coins history based upon a 7-day parameter. 
     From the data you retrieve, output to theconsole.
@@ -16,4 +17,4 @@ Examples:
     | coin      | days  |
     | BitCoin   | 7     |
     | Ethereum  | 7     |
-    | Cardano   | 7     |      
+    | Cardano   | 7     | 

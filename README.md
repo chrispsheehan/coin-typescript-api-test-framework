@@ -55,8 +55,25 @@ docker build . -t [YourImageName]
 Run the container.
 
 ```bash
-docker run -it [YourImageName] test 
+docker run -it [YourImageName] 
 ```
+
+## Filters
+
+Filters can be appended to local and docker tests.
+
+Documentation found [here](https://cucumber.io/docs/cucumber/api/#tag-expressions)
+
+Examples filters;
+
+```bash
+"(@coins and not @exchanges)"
+"(@coins or @exchanges)"
+"@coins"
+```
+
+Local: ```tags=@coins npm run test```
+Docker: ```docker run -it [YourImageName] --tags=@coins```
 
 ### To-Do
 
