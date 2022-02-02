@@ -3,10 +3,8 @@ import { expect } from 'chai';
 
 Given("The exchanges API is available", async function() {
     
-    return 'pending';
-    // impliment the below when working
-    // this.exchangesIndex = await this.coinsApi.getExchanges()
-    // expect(this.exchanges.status).to.equal('success');
+    this.exchangesIndex = await this.coinsApi.getExchanges()
+    expect(this.exchanges.status).to.equal('success');
 });
 
 Given('I obtain the {string} exchange', async function (exchange: string) {
