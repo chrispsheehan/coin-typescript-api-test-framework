@@ -6,8 +6,7 @@ declare module '@cucumber/cucumber' {
     interface World {
         coinsApi: CoinRankingApiCoins
         exchangesApi: CoinRankingApiExchanges  
-        coinsIndex: Index
-        exchangesIndex: Index
         coinDataProcessor: CoinDataProcessor
+        coinHistory: CoinHistory
     }
 }

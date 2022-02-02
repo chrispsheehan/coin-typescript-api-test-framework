@@ -5,10 +5,15 @@ import { expect } from 'chai';
 Given('I obtain the {string} coin history', async function (coinName: string) {
 
     var coinDetail: CoinDetail = await this.coinsApi.getCoinsDetails();
+    expect(coinDetail.status).to.equal('success');
+
     var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(coinDetail, coinName);
-    var coinHistory: CoinHistory = await this.coinsApi.getCoinHistory(coinBreakdown.uuid);
+    expect(coinBreakdown.name.toLowerCase()).to.equal(coinName.toLowerCase());
+
+    this.CoinHistory = await this.coinsApi.getCoinHistory(coinBreakdown.uuid);
+    expect(this.CoinHistory.status).to.equal('success');    
     
-    console.log(coinName + coinHistory.data.change);
+    console.log(coinName + this.CoinHistory.data.change);
 });
 
 

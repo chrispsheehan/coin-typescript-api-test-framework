@@ -4,6 +4,6 @@ import { expect } from 'chai';
 
 Given("The coins API is available", async function() {
     
-    this.coinsIndex = await this.coinsApi.getCoins()
-    expect(this.coinsIndex.status).to.equal('success');
+    var coinsIndex: Index = await this.coinsApi.getCoins()
+    expect(coinsIndex.status).to.equal('success');
 });
