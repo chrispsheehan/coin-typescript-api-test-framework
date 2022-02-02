@@ -1,4 +1,4 @@
-import { Given, Then, When } from '@cucumber/cucumber';
+import { Given, Then } from '@cucumber/cucumber';
 import { expect } from 'chai';
 
 
@@ -8,24 +8,25 @@ Given('I obtain the {string} coin history', async function (coinName: string) {
     expect(coinDetail.status).to.equal('success');
 
     var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(coinDetail, coinName);
-    expect(coinBreakdown.name.toLowerCase()).to.equal(coinName.toLowerCase());
 
-    this.CoinHistory = await this.coinsApi.getCoinHistory(coinBreakdown.uuid);
-    expect(this.CoinHistory.status).to.equal('success');    
-    
-    console.log(coinName + this.CoinHistory.data.change);
-});
-
-
-Given('I obtain the first result from {int} days ago', function (int) {
-
-
+    this.coinHistory = await this.coinsApi.getCoinHistory(coinBreakdown.uuid);
+    expect(this.coinHistory.status).to.equal('success');    
 });
 
 
 Given('I obtain the latest result', function () {
 
+    var CoinHistoryList : CoinHistoryEntry[] = this.coinHistory.data.history; 
 
+    console.log('steps' + CoinHistoryList[0].price)
+});
+
+
+Given('I obtain the first result from {int} days ago', function (int) {
+
+    var CoinHistoryList : CoinHistoryEntry[] = this.coinHistory.data.history; 
+
+    console.log('steps' + CoinHistoryList[0].price)
 });
 
 

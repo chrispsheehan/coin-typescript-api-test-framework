@@ -9,8 +9,8 @@ Background:
 
 Scenario Outline: Output coin history
     Given I obtain the "<coin>" coin history
+    And I obtain the latest result     
     And I obtain the first result from <days> days ago
-    And I obtain the latest result  
     Then I print the two results in order oldest to newest
 
 Examples:

@@ -4,10 +4,7 @@ interface CoinHistory
     data: {
         change: string,
         history: [
-            {
-                price: string,
-                timestamp: number
-            }
+            CoinHistoryEntry
         ]
     }
 }
