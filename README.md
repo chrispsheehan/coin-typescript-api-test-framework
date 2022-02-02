@@ -3,7 +3,7 @@
 - [Blog post inspiration](https://sylvain.pontoreau.com/2018/04/30/typescript-cucumber-getting-started)
 - [CucumberJS](https://github.com/cucumber/cucumber-js)
 
-This framewoerk targets the [Coin Ranking API](https://rapidapi.com/Coinranking/api/coinranking1).
+This framework targets the [Coin Ranking API](https://rapidapi.com/Coinranking/api/coinranking1).
 
 ## Configuration
 
@@ -78,4 +78,4 @@ Examples filters;
 ### To-Do
 
 - Proper versioning on docker images. At the moment all images are tagged with latest, ideally this would be an incremented major/minor version.
-- Work out why the ```exchanges/``` endpoints aren't working/
+- Work out why the ```exchanges/``` endpoints aren't authenticating.
