@@ -13,7 +13,9 @@ Before(function () {
 
     this.coinsApi = new CoinRankingApiCoins(env.BASE_URL, env.AUTH_TOKEN);
 
-    this.exchangesApi = new CoinRankingApiExchanges(env.BASE_URL, env.AUTH_TOKEN);    
+    this.exchangesApi = new CoinRankingApiExchanges(env.BASE_URL, env.AUTH_TOKEN);
+    
+    this.coinUuidList = [];
 });
 
 BeforeAll(function () {

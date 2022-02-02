@@ -9,6 +9,8 @@ Given('I obtain the {string} coin history', async function (coinName: string) {
 
     var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(coinDetail, coinName);
 
+    expect(coinBreakdown).to.not.be.null;
+
     this.coinUuid = coinBreakdown.uuid;
     this.coinHistory = await this.coinsApi.getCoinHistory(this.coinUuid);
     expect(this.coinHistory.status).to.equal('success');    
