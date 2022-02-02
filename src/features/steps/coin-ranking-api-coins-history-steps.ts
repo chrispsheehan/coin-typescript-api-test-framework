@@ -16,9 +16,14 @@ Given('I obtain the {string} coin history', async function (coinName: string) {
 
 Given('I obtain the latest result', function () {
 
-    var CoinHistoryList : CoinHistoryEntry[] = this.coinHistory.data.history; 
+    var coinHistoryList: CoinHistoryEntry[] = this.coinHistory.data.history; 
 
-    console.log('steps' + CoinHistoryList[0].price)
+    expect(coinHistoryList).to.be.an('array');
+    // amount of records in a single day
+    expect(coinHistoryList).to.have.lengthOf(288); 
+
+    // save first days history to memory
+    this.latestHistory = coinHistoryList[0]    
 });
 
 
