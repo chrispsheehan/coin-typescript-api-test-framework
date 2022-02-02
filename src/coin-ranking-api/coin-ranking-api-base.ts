@@ -17,6 +17,7 @@ export class CoinRankingApi {
         this.authToken = authToken;        
     }
 
+
     getBase(targetResouce: string): request.Test {
         return request(this.baseUrl)
             .get(`/${targetResouce}/`)
@@ -29,8 +30,9 @@ export class CoinRankingApi {
         return this.getBase(targetResouce)
             .expect(200)
     }
+
     
-    getQuery(targetResouce: string, queryParams: JSON): request.Test {
+    getQuery(targetResouce: string, queryParams: string | object): request.Test {
         return this.getBase(targetResouce)
             .query(queryParams)
             .expect(200)
