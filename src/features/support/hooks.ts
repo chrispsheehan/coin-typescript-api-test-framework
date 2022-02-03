@@ -5,7 +5,7 @@ import env from "../../config/env.json"
 import { CoinDataPrinter } from '../../data-processor/coin-data-printer';
 import { CoinDataProcessor } from '../../data-processor/coin-data-processor';
 
-Before(function () {
+Before({tags: "@coins"}, function () {
     
     this.coinDataProcessor = new CoinDataProcessor();
     
@@ -13,9 +13,12 @@ Before(function () {
 
     this.coinsApi = new CoinRankingApiCoins(env.BASE_URL, env.AUTH_TOKEN);
 
-    this.exchangesApi = new CoinRankingApiExchanges(env.BASE_URL, env.AUTH_TOKEN);
-
     this.coinBreakdownList = []
+});
+
+Before({tags: "@exchanges"}, function () {
+
+    this.exchangesApi = new CoinRankingApiExchanges(env.BASE_URL, env.AUTH_TOKEN);
 });
 
 BeforeAll(function () {
