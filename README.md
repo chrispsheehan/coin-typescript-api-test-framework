@@ -75,6 +75,14 @@ Examples filters;
 - Local: ```tags=@coins npm run test```
 - Docker: ```docker run -it [YourImageName] --tags=@coins```
 
+## Run in paralell
+
+Simply add parameter as per below
+
+```bash
+--parallel 3
+```
+
 ### To-Do
 
 - Proper versioning on docker images. At the moment all images are tagged with latest, ideally this would be an incremented major/minor version.
