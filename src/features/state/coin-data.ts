@@ -8,8 +8,7 @@ declare module '@cucumber/cucumber' {
         coinDataProcessor: CoinDataProcessor
         coinDataPrinter: CoinDataPrinter
         coinHistory: CoinHistory
-        coinUud: string
-        coinUuidList: string[]
+        coinBreakdownList: CoinBreakdown[]
         latestHistory: CoinHistoryEntry
         xDaysBackHistory: {
             entry: CoinHistoryEntry

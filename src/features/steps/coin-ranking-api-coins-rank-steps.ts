@@ -8,30 +8,29 @@ Given('I obtain the details for {string} coins', async function (coins: string) 
     expect(coinDetail.status).to.equal('success');
 
     coins.split(',').forEach((coinName: string) => {
-    
+
         var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(coinDetail, coinName.trim());
 
-        if(coinBreakdown){
-            this.coinUuidList.push(coinBreakdown.uuid);
+        if (coinBreakdown) {
+            this.coinBreakdownList.push(coinBreakdown);
         }
         else {
             // 'Doge' doesn't exist... probs meant to be DogeCoin but need to handle
-            console.log(`******************************************`)            
-            console.log(`COULD NOT FIND coin details for ${coinName}`)
-            console.log(`******************************************`)              
+            console.log(`******************************************`);
+            console.log(`COULD NOT FIND coin details for ${coinName}`);
+            console.log(`******************************************`);
         }
     });
 
-    expect(this.coinUuidList).to.have.lengthOf.above(0);
-
-    this.coinUuidList.forEach((element: string) => {
-        console.log(element);
-    });
+    expect(this.coinBreakdownList).to.have.lengthOf.above(0);
 });
 
 
 Given('I sort the results into descending order', function () {
 
+    this.coinBreakdownList.forEach((element: CoinBreakdown) => {
+        console.log(element.name);
+    });    
 });
 
 
