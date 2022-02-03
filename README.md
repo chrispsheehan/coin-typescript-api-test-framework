@@ -75,7 +75,7 @@ Examples filters;
 - Local: ```tags=@coins npm run test```
 - Docker: ```docker run -it [YourImageName] --tags=@coins```
 
-## Run in paralell
+## Run in parallel
 
 Simply add parameter as per below
 
@@ -87,3 +87,4 @@ Simply add parameter as per below
 
 - Proper versioning on docker images. At the moment all images are tagged with latest, ideally this would be an incremented major/minor version.
 - Work out why the ```exchanges/``` endpoints aren't authenticating.
+- Logging
