@@ -7,13 +7,15 @@ export class CoinDataPrinter {
     }    
 
 
-    public printCoinHistory(coinHistoryEntryList: CoinHistoryEntry[]) {
+    public printCoinHistory(coinHistoryEntryList: CoinHistoryEntry[], daysBack: number) {
 
-        coinHistoryEntryList.forEach((entry: CoinHistoryEntry) => {
-            
-            var dateTime = this.getHumanTimeStamp(entry.timestamp);
-            console.log(`${dateTime} ${entry.price}`)
-        });
+        console.log(`****History Entry start****`)
+        var firstResult: CoinHistoryEntry = coinHistoryEntryList[0]
+        var dateTime = this.getHumanTimeStamp(firstResult.timestamp);      
+        console.log(`Days back: ${daysBack}`);
+        console.log(`Date: ${dateTime}`);
+        console.log(`Price: ${firstResult.price}`);
+        console.log(`****History Entry end****`)        
     }
 
     public printCoinRankInformation(coinBreakdownList: CoinBreakdown[]) {
@@ -22,7 +24,7 @@ export class CoinDataPrinter {
             
             var dateTime = this.getHumanTimeStamp(entry.listedAt);
             
-            console.log(`****Rank Info startß*****`);
+            console.log(`****Rank Info start*****`);
             console.log(`Name: ${entry.name}`);
             console.log(`Type: ${entry.tier}`);
             console.log(`Rank: ${entry.rank}`);

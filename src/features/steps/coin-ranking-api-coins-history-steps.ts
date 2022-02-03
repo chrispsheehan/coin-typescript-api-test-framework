@@ -48,10 +48,8 @@ Given('I obtain the first result from {int} days ago', async function (daysBack)
 Then('I print the two results in order oldest to newest', function () {
 
     var firstResultList: CoinHistoryEntry[] = this.coinDataProcessor.getSortedCoinHistory(this.latestHistory);
-    console.log('First result is;')
-    this.coinDataPrinter.printCoinHistory(firstResultList)
+    this.coinDataPrinter.printCoinHistory(firstResultList, 0)
 
-    console.log(`First result from ${this.xDaysBackHistory.daysBack} days back is;`)
     var xDaysBackResultList: CoinHistoryEntry[] = this.coinDataProcessor.getSortedCoinHistory(this.xDaysBackHistory.entry);
-    this.coinDataPrinter.printCoinHistory(xDaysBackResultList)
+    this.coinDataPrinter.printCoinHistory(xDaysBackResultList, this.xDaysBackHistory.daysBack)
 });

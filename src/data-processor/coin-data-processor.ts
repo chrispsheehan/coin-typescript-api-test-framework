@@ -2,6 +2,7 @@ export class CoinDataProcessor {
 
     public getCoinBreakdown(coinDetail: CoinDetail, coinName: string): CoinBreakdown | undefined {
         
+        console.log(`Obtaining coin details for ${coinName}`)
         return coinDetail.data.coins.find((coin: CoinBreakdown) => coin.name.toLowerCase() === coinName.toLowerCase())
     }
 
