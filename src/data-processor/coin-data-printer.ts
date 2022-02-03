@@ -20,12 +20,15 @@ export class CoinDataPrinter {
 
         coinBreakdownList.forEach((entry: CoinBreakdown) => {
             
-            var dateTime = this.getHumanTimeStamp(entry.listedAt);            
+            var dateTime = this.getHumanTimeStamp(entry.listedAt);
+            
+            console.log(`****Rank Info startß*****`);
             console.log(`Name: ${entry.name}`);
             console.log(`Type: ${entry.tier}`);
             console.log(`Rank: ${entry.rank}`);
-            console.log(`First Seen Price: TBC`);
+            console.log(`First Seen Price: TBC`); ///need another call to the history for this
             console.log(`First seen at: ${dateTime}`)
+            console.log("****Rank Info end****")
         });
     }    
 }
