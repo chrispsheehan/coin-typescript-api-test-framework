@@ -8,6 +8,7 @@ Given('I obtain the {string} coin history', async function (coinName: string) {
 
     expect(coinBreakdown).to.not.be.null;
 
+    this.coinName = coinName;
     this.coinUuid = coinBreakdown.uuid;
     this.coinHistory = await this.coinsApi.getCoinHistory(this.coinUuid);
     expect(this.coinHistory.status).to.equal('success');    
@@ -48,8 +49,8 @@ Given('I obtain the first result from {int} days ago', async function (daysBack)
 Then('I print the two results in order oldest to newest', function () {
 
     var firstResultList: CoinHistoryEntry[] = this.coinDataProcessor.getSortedCoinHistory(this.latestHistory);
-    this.coinDataPrinter.printCoinHistory(firstResultList, 0)
+    this.coinDataPrinter.printCoinHistory(this.coinName, firstResultList, 0)
 
     var xDaysBackResultList: CoinHistoryEntry[] = this.coinDataProcessor.getSortedCoinHistory(this.xDaysBackHistory.entry);
-    this.coinDataPrinter.printCoinHistory(xDaysBackResultList, this.xDaysBackHistory.daysBack)
+    this.coinDataPrinter.printCoinHistory(this.coinName, xDaysBackResultList, this.xDaysBackHistory.daysBack)
 });

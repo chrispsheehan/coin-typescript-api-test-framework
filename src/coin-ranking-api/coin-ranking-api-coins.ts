@@ -58,7 +58,7 @@ export class CoinRankingApiCoins extends CoinRankingApi {
     getCoinHistoryDaysBack(coinUuid: string, daysBack: number): Promise<CoinHistory>{
 
         return new Promise((resolve, reject) => {
-            this.getQuery(this.getCoinHistoryResource(coinUuid), {timeperiod: `${daysBack-1}d`})
+            this.getQuery(this.getCoinHistoryResource(coinUuid), {timeperiod: `${daysBack}d`})
             .then(response => {
                 return resolve(JSON.parse(response.text));
             })

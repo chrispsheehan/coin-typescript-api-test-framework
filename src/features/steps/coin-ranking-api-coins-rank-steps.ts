@@ -14,7 +14,7 @@ Given('I obtain the details for {string} coins', async function (coins: string) 
         else {
             // 'Doge' doesn't exist... probs meant to be DogeCoin but need to handle
             console.log(`******************************************`);
-            console.log(`COULD NOT FIND coin details for ${coinName}`);
+            console.log(`COULD NOT FIND coin details for ${coinName} - please check the name string`);
             console.log(`******************************************`);
         }
     });
@@ -31,6 +31,5 @@ Given('I sort the results into descending order', function () {
 
 Then('I can print the rank details in a readable format', function () {
 
-    console.log('Rank results are;')
     this.coinDataPrinter.printCoinRankInformation(this.coinBreakdownList);
 });
