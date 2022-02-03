@@ -14,5 +14,6 @@ declare module '@cucumber/cucumber' {
             entry: CoinHistoryEntry
             daysBack: number
         }
+        coinDetail: CoinDetail
     }
 }

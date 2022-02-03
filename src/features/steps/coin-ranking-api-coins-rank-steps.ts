@@ -3,13 +3,10 @@ import { expect } from 'chai';
 
 
 Given('I obtain the details for {string} coins', async function (coins: string) {
-        
-    var coinDetail: CoinDetail = await this.coinsApi.getCoinsDetails();
-    expect(coinDetail.status).to.equal('success');
 
     coins.split(',').forEach((coinName: string) => {
 
-        var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(coinDetail, coinName.trim());
+        var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(this.coinDetail, coinName.trim());
 
         if (coinBreakdown) {
             this.coinBreakdownList.push(coinBreakdown);

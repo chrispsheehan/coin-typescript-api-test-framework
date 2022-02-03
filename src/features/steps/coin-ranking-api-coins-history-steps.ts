@@ -4,10 +4,7 @@ import { expect } from 'chai';
 
 Given('I obtain the {string} coin history', async function (coinName: string) {
 
-    var coinDetail: CoinDetail = await this.coinsApi.getCoinsDetails();
-    expect(coinDetail.status).to.equal('success');
-
-    var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(coinDetail, coinName);
+    var coinBreakdown: CoinBreakdown = this.coinDataProcessor.getCoinBreakdown(this.coinDetail, coinName);
 
     expect(coinBreakdown).to.not.be.null;
 
