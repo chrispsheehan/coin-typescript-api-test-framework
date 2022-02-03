@@ -25,12 +25,12 @@ Given('I obtain the details for {string} coins', async function (coins: string) 
 
 Given('I sort the results into descending order', function () {
 
-    this.coinBreakdownList.forEach((element: CoinBreakdown) => {
-        console.log(element.name);
-    });    
+    this.coinBreakdownList = this.coinDataProcessor.sortByFirstSeenDateTime(this.coinBreakdownList)
 });
 
 
 Then('I can print the rank details in a readable format', function () {
 
+    console.log('Rank results are;')
+    this.coinDataPrinter.printCoinRankInformation(this.coinBreakdownList)
 });
