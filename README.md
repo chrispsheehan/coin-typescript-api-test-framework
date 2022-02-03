@@ -7,7 +7,7 @@ This framework targets the [Coin Ranking API](https://rapidapi.com/Coinranking/a
 
 ## Configuration
 
-Configuration is stored in the below format. Auth token will need to be populated.
+Configuration is stored in the below format. Auth token will need to be populated. It can be obtained from the [RapidApi](https://rapidapi.com/Coinranking/api/coinranking1/) site.
 
 ```json
 {
