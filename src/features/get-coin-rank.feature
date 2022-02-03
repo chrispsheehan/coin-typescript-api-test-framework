@@ -8,7 +8,9 @@ Background:
     Given The coins API is available
 
 Scenario Outline: Output coin rank
-    Given I obtain the "<coin>" coin rank
+    Given I obtain the details for "Doge, Solana, Bitcoin Cash" coins
+    And I sort the results into descending order
+    Then I can print the rank details in a readable format
 
 Examples:
     | coin          |
