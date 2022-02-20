@@ -85,6 +85,6 @@ Simply add parameter as per below
 
 ### To-Do
 
-- Proper versioning on docker images. At the moment all images are tagged with latest, ideally this would be an incremented major/minor version.
+- [Proper versioning on docker images](https://stackoverflow.com/questions/36235836/how-to-increment-docker-tag-automatically). At the moment all images are tagged with latest, ideally this would be an incremented major/minor version.
 - Work out why the ```exchanges/``` endpoints aren't authenticating.
 - Logging
